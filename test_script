@@ -1,0 +1,25 @@
+#!/bin/bash
+ 
+curl -v POST --header "X-User-Id: 1" -d '{"jsonrpc":"2.0", "id": 1, "method": "createUser", "params": {"user":{"name":"admin", "role":"adm"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 1" -d '{"jsonrpc":"2.0", "id": 1, "method": "createUser", "params": {"user":{"name":"anton", "role":"usr"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 2" -d '{"jsonrpc":"2.0", "id": 1, "method": "createUser", "params": {"user":{"name":"petr", "role":"usr"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 2" -d '{"jsonrpc":"2.0", "id": 1, "method": "createUser", "params": {"user":{"name":"oleg", "role":"usr"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 1" -d '{"jsonrpc":"2.0", "id": 1, "method": "getUsers", "params": {}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 1" -d '{"jsonrpc":"2.0", "id": 1, "method": "deleteUser", "params": {"user":{"user_id":4 }}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 3" -d '{"jsonrpc":"2.0", "id": 1, "method": "deleteUser", "params": {"user":{"user_id":5 }}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 3" -d '{"jsonrpc":"2.0", "id": 1, "method": "getUsers", "params": {}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 1" -d '{"jsonrpc":"2.0", "id": 1, "method": "add", "params": {"task":{"title":"make", "note":"make new realise", "due_date":"12.02.2021"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 2" -d '{"jsonrpc":"2.0", "id": 1, "method": "add", "params": {"task":{"title":"update", "note":"update old realise", "due_date":"14.02.2021"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 3" -d '{"jsonrpc":"2.0", "id": 1, "method": "add", "params": {"task":{"title":"correct", "note":"correct all mistakes", "due_date":"14.02.2021"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 4" -d '{"jsonrpc":"2.0", "id": 1, "method": "add", "params": {"task":{"title":"correct", "note":"correct all mistakes", "due_date":"14.02.2021"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 5" -d '{"jsonrpc":"2.0", "id": 1, "method": "add", "params": {"task":{"title":"delete", "note":"delete old data", "due_date":"14.02.2021"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 1" -d '{"jsonrpc":"2.0", "id": 1, "method": "add", "params": {"task":{"title":"check", "note":"check all tasks", "due_date":"15.02.2021"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 1" -d '{"jsonrpc":"2.0", "id": 1, "method": "get", "params": {"task":{"task_id":1}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 1" -d '{"jsonrpc":"2.0", "id": 1, "method": "get", "params": {"task":{"task_id":0}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 3" -d '{"jsonrpc":"2.0", "id": 1, "method": "get", "params": {"task":{"task_id":0}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 1" -d '{"jsonrpc":"2.0", "id": 1, "method": "update", "params": {"task":{"task_id":3, "title":"correct", "note":"correct mistakes at old realise", "due_date":"14.02.2021"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 5" -d '{"jsonrpc":"2.0", "id": 1, "method": "update", "params": {"task":{"task_id":5 "title":"update", "note":"update  all realises", "due_date":"14.02.2021"}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 1" -d '{"jsonrpc":"2.0", "id": 1, "method": "get", "params": {"task":{"task_id":1}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 3" -d '{"jsonrpc":"2.0", "id": 1, "method": "delete", "params": {"task":{"task_id":5}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 2" -d '{"jsonrpc":"2.0", "id": 1, "method": "delete", "params": {"task":{"task_id":1}}}' http://localhost:8991/
+curl -v POST --header "X-User-Id: 2" -d '{"jsonrpc":"2.0", "id": 1, "method": "get", "params": {"task":{"task_id":0}}}' http://localhost:8991/
